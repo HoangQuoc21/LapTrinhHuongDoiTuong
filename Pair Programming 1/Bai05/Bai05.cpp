@@ -105,22 +105,28 @@ private:
 	string _ten;
 	Date _ngaySinh;
 	int _tuoi;
+    string _phai;
 	void tinhTuoi();
 public:
     CauThu();
     void setCauThu(string thongTin);
 	string getTen();
 	int getTuoi();
+    string phai();
 };
 
+string CauThu::phai(){
+    return _phai;
+}
+
 void CauThu::tinhTuoi() {
-    _tuoi = ngayHienTai.nam() - _ngaySinh.nam() - 1;
-    if (ngayHienTai.thang() > _ngaySinh.thang())
-        _tuoi++;
-    else if (ngayHienTai.thang() == _ngaySinh.thang()) {
-        if (ngayHienTai.ngay() >= _ngaySinh.ngay())
-            _tuoi++;
-    }
+    _tuoi = ngayHienTai.nam() - _ngaySinh.nam();
+    // if (ngayHienTai.thang() > _ngaySinh.thang())
+    //     _tuoi++;
+    // else if (ngayHienTai.thang() == _ngaySinh.thang()) {
+    //     if (ngayHienTai.ngay() >= _ngaySinh.ngay())
+    //         _tuoi++;
+    // }
 }
 
 CauThu::CauThu() {
@@ -131,9 +137,11 @@ CauThu::CauThu() {
 
 void CauThu::setCauThu(string thongTin){
     thongTin = reverseStr(thongTin);
+    string c;
     string buffer;
     stringstream ss(thongTin);
-
+    getline(ss, c, ' ');
+    _phai = c;
     getline(ss, buffer, ' ');
     buffer = reverseStr(buffer);
     _ngaySinh.setNgaySinh(buffer);
@@ -152,48 +160,44 @@ int CauThu::getTuoi() {
     return _tuoi;
 }
 
-vector<CauThu> docFile(string tenFileDoc) {
-    fstream fin(tenFileDoc);
+vector<CauThu> docFile() {
     string line;
     CauThu buffer;
     vector<CauThu> cacCauThu;
 
-    if (!fin) {
-        cout << "Khong the mo file " << tenFileDoc << " de doc.\n";
-        exit(1);
-    }
-
-    while (!fin.eof()) {
-        getline(fin, line);
+    
+    freopen("input.txt", "rt", stdin);
+    while (!cin.eof()) {
+        getline(cin, line);
         buffer.setCauThu(line);
         cacCauThu.push_back(buffer);
     }
     
-    fin.close();
-    cout << "*Da doc thanh cong file " << tenFileDoc << " va luu danh sach cac cau thu.\n";
     return cacCauThu;
 }
 
 void ghiFile(vector<CauThu> cacCauThu) {
-    string tenFileGhi = "output.txt";
-    ofstream fout("output.txt");
-    if (!fout) {
-        cout << "Khong the mo file " << tenFileGhi<< " de ghi.\n";
-        exit(1);
-    }
+    freopen("output.txt", "wt", stdout);
     int tuoiLonNhat = 0;
-    for (auto x : cacCauThu) {
-        if (x.getTuoi() > tuoiLonNhat)
-            tuoiLonNhat = x.getTuoi();
+    for (auto &x : cacCauThu) {
+        if (x.phai() == "F"){
+            if (x.getTuoi() > tuoiLonNhat){
+                tuoiLonNhat = x.getTuoi();
+
+            }
+                
+        }
+        
     }
 
-    fout << "*Nhung cau thu lon tuoi nhat la:\n";
-    for (auto x : cacCauThu) {
-        if (x.getTuoi() == tuoiLonNhat)
-            fout << x.getTen() << " " << x.getTuoi() << endl;
+    cout << "*Nhung cau thu nu lon tuoi nhat la:\n";
+    for (auto &x : cacCauThu) {
+        if (x.phai() == "F"){
+            if (x.getTuoi() == tuoiLonNhat)
+                cout << x.getTen() << " " << x.getTuoi() << endl;
+        }
+           
     }
-    fout.close();
-    cout << "*Da ghi nhung cau thu lon tuoi nhat vao file " << tenFileGhi << endl;
 }
 
 
@@ -203,7 +207,9 @@ int main() {
     cout << "*Ngay Hien Tai: " << ngayHienTai << endl;
 
     string tenFileDoc("input.txt");
-    vector<CauThu> cacCauThu = docFile(tenFileDoc);
+    vector<CauThu> cacCauThu = docFile();
+    // for (auto x: cacCauThu)
+    //     cout << "_"<< x.phai() <<"_" << endl;
     ghiFile(cacCauThu);
     
     return 0;

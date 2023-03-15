@@ -119,56 +119,44 @@ float ThienThach::thoiGianVaCham() {
 }
 
 vector<ThienThach> docFile(string tenFileDoc) {
-	fstream fin(tenFileDoc);
 	string line;
 	
 	vector<ThienThach> cacThienThach;
 
-	if (!fin) {
-		cout << "Khong the mo file " << tenFileDoc << " de doc.\n";
-		exit(1);
-	}
-
-	while (!fin.eof()) {
-		getline(fin, line);
+	freopen("input.txt", "rt", stdin);
+	while (!cin.eof()) {
+		getline(cin, line);
 		ThienThach buffer(line);
 		cacThienThach.push_back(buffer);
 	}
 
-	fin.close();
-	cout << "*Da doc thanh cong file " << tenFileDoc << " va luu danh sach cac thienThach.\n";
 	return cacThienThach;
 }
 
 void ghiFile(vector<ThienThach> cacThienThach) {
-	string tenFileGhi = "output.txt";
-	ofstream fout("output.txt");
-	if (!fout) {
-		cout << "Khong the mo file " << tenFileGhi << " de ghi.\n";
-		exit(1);
-	}
+	freopen("output.txt", "wt", stdout);
 	float vaChamDauTien = 100;
 	for (auto x : cacThienThach) {
 		if (x.thoiGianVaCham() < vaChamDauTien)
 			vaChamDauTien = x.thoiGianVaCham();
 	}
 
-	fout << "*Thien thach va cham Trai Dat dau tien la:\n";
+	cout << "*Thien thach va cham Trai Dat dau tien la:\n";
 	for (auto x : cacThienThach) {
 		if (x.thoiGianVaCham() == vaChamDauTien)
-			fout << x.ma() << " " << x.thoiGianVaCham() << endl;
+			cout << x.ma() << " " << x.thoiGianVaCham() << endl;
 	}
-	fout.close();
-	cout << "*Da ghi Thien thach va cham Trai Dat dau tien vao file " << tenFileGhi << endl;
 }
 
 int main() {
 	system("cls");
-	string fileDoc = "input.txt";
-	vector<ThienThach> cacThienThach = docFile(fileDoc);
-	cout << "*Cac thien thach da doc: \n";
-	for (auto x : cacThienThach)
-		cout << x.ma() << " " << x.tam() << " " << x.banKinh() << " " << x.tocDo() << ": " << x.thoiGianVaCham() << endl;
-	ghiFile(cacThienThach);
+	// string fileDoc = "input.txt";
+	// vector<ThienThach> cacThienThach = docFile(fileDoc);
+	// cout << "*Cac thien thach da doc: \n";
+	// for (auto x : cacThienThach)
+	// 	cout << x.ma() << " " << x.tam() << " " << x.banKinh() << " " << x.tocDo() << ": " << x.thoiGianVaCham() << endl;
+	// ghiFile(cacThienThach);
+	string buffer = "1.5";
+	cout << stof(buffer) + 1 << endl;
 	return 0;
 }

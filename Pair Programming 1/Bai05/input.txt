@@ -1,5 +1,7 @@
-C Ronaldo 05/02/1985
-Leo Messi 24/06/1987
-G G Buffon 28/01/1978
-Nguyen Quang Hai 12/04/1997
-Virgil van Dijk 08/07/1991
+C Ronaldo 05/02/1985 M
+Leo Messi 24/06/1987 M
+G G Buffon 28/01/1978 M
+Nguyen Quang Hai 12/04/1990 M
+Hoang Thi Loan 29/11/1990 F
+Virgil van Dijk 08/07/1991 M
+Huynh Nhu 28/11/1990 F

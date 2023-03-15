@@ -105,37 +105,33 @@ bool daXuatHien(vector<CaSi> cacCaSi, CaSi caSi) {
 
 Time startVoting, endVoting;
 
-vector<CaSi> docFile(string fileDoc) {
+vector<CaSi> docFile() {
 	vector<CaSi> cacCaSi;
 	string line;
-	ifstream fin(fileDoc);
+	
 	CaSi buffer;
 	string strBuffer;
 
-	if (!fin) {
-		cout << "*Khong the mo file " << fileDoc << " de doc.\n";
-		exit(1);
-	}
-
-	getline(fin, line);
+	
+	freopen("input.txt", "rt", stdin);
+	getline(cin, line);
 	stringstream ss1(line);
 	getline(ss1, strBuffer, ' ');
 	startVoting.setTime(strBuffer);
 	getline(ss1, strBuffer);
 	endVoting.setTime(strBuffer);
 
-	while (!fin.eof()) {
-		getline(fin, line);
+	while (!cin.eof()) {
+		getline(cin, line);
 		buffer.setCaSi(line);
 		if (!daXuatHien(cacCaSi, buffer))
 			cacCaSi.push_back(buffer);
 	}
 
-	fin.seekg(0, ios::beg);
-	getline(fin, line);
-
-	while (!fin.eof()) {
-		getline(fin, line);
+	cin.seekg(0);
+	getline(cin, line);
+	while (!cin.eof()) {
+		getline(cin, line);
 
 		stringstream ss2(line);
 		getline(ss2, strBuffer, ' ');
@@ -154,19 +150,11 @@ vector<CaSi> docFile(string fileDoc) {
 				}
 	}
 
-	fin.close();
-	cout << "*Da doc file " << fileDoc << " va luu danh sach cac ca si.\n";
 	return cacCaSi;
 }
 
 void ghiFile(vector<CaSi> cacCaSi) {
-	string fileGhi = "output.txt";
-	ofstream fout(fileGhi);
-
-	if (!fout) {
-		cout << "*Khong the mo file " << fileGhi << " de ghi.\n";
-		exit(1);
-	}
+	freopen("output.txt", "wt", stdout);
 
 	int nhieuPhieuNhat = 0;
 	for (auto x : cacCaSi) {
@@ -174,13 +162,10 @@ void ghiFile(vector<CaSi> cacCaSi) {
 			nhieuPhieuNhat = x.soPhieu();
 	}
 
-	fout << "*Cac ca si duoc binh chon nhieu nhat la:\n";
+	cout << "*Cac ca si duoc binh chon nhieu nhat la:\n";
 	for (auto x : cacCaSi)
 		if (x.soPhieu() == nhieuPhieuNhat)
-			fout << x.ten() << " " << x.soPhieu() << endl;
-
-	fout.close();
-	cout << "*Da ghi danh sach nhung ca si duoc binh chon nhieu nhat vao file " << fileGhi << endl;
+			cout << x.ten() << " " << x.soPhieu() << endl;
 }
 
 
@@ -188,7 +173,7 @@ int main() {
 	system("cls");
 	
 	string fileDoc = "input.txt";
-	vector<CaSi> cacCaSi = docFile(fileDoc);
+	vector<CaSi> cacCaSi = docFile();
 	ghiFile(cacCaSi);
 	
 	return 0;
