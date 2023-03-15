@@ -111,7 +111,7 @@ float ThienThach::tocDo() {
 
 float ThienThach::thoiGianVaCham() {
 	float quangDuong = _tam.khoangCach(traiDat);
-	//quangDuong -= _banKinh;
+	quangDuong -= _banKinh;
 
 	float thoiGian = quangDuong / _tocDo;
 	
@@ -166,6 +166,7 @@ int main() {
 	system("cls");
 	string fileDoc = "input.txt";
 	vector<ThienThach> cacThienThach = docFile(fileDoc);
+	cout << "*Cac thien thach da doc: \n";
 	for (auto x : cacThienThach)
 		cout << x.ma() << " " << x.tam() << " " << x.banKinh() << " " << x.tocDo() << ": " << x.thoiGianVaCham() << endl;
 	ghiFile(cacThienThach);

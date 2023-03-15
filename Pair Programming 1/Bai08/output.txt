@@ -1,2 +1,2 @@
 *Thien thach va cham Trai Dat dau tien la:
-C04 0.34801
+C07 0.0753692
