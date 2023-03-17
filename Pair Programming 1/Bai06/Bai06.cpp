@@ -23,7 +23,7 @@ public:
 	Time();
 	void setTime(string thoiGian);
 
-	int toPhut();
+	int toGiay();
 };
 
 Time::Time() {
@@ -39,14 +39,14 @@ void Time::setTime(string thoiGian) {
 	_phut = stoi(buffer);
 }
 
-int Time::toPhut() {
+int Time::toGiay() {
 	int ketQua = 0;
 	ketQua += _gio * 60 + _phut;
 	return ketQua;
 }
 
 bool coHopLe(Time startVoting, Time endVoting, Time thoiDiem) {
-	return (startVoting.toPhut() < thoiDiem.toPhut()) && (thoiDiem.toPhut() < endVoting.toPhut());
+	return (startVoting.toGiay() < thoiDiem.toGiay()) && (thoiDiem.toGiay() < endVoting.toGiay());
 }
 
 class CaSi {
