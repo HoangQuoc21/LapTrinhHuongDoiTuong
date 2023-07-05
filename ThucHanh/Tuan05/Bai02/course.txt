@@ -1,0 +1,9 @@
+1|Machine Learning|10/04/2023|Mon|Morning
+2|Deep Learning|10/04/2023|Mon|Afternoon
+3|OOP|11/04/2023|Tues|Morning
+4|OOP|12/04/2023|Wed|Morning
+5|OOP|13/04/2023|Thurs|Afternoon
+6|PTech|14/04/2023|Fri|Morning
+7|OOP|14/04/2023|Fri|Afternoon
+8|Deep Learning|15/04/2023|Sat|Morning
+9|Machine Learning|15/04/2023|Sat|Afternoon

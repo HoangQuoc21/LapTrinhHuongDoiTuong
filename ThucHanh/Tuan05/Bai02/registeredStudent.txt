@@ -1,0 +1,41 @@
+STUDENT LIST:
+=============================================================================
+Id: 21120542
+Name: Lam Hoang Quoc
+DOB: 21/06/2003
+Address: Thong Nhat, Dong Nai
+*Learning schedule*:
+Mon: Machine Learning Deep Learning
+Tues: OOP x
+Wed: x x
+Thurs: x x
+Fri: x x
+Sat: x x
+Sun: x x
+---------------------------------------------------------------------
+Id: 21120543
+Name: Lam Thuy Cam Tien
+DOB: 17/10/2003
+Address: Vinh Cuu, Dong Nai
+*Learning schedule*:
+Mon: Machine Learning x
+Tues: x x
+Wed: x x
+Thurs: x x
+Fri: x x
+Sat: x x
+Sun: x x
+---------------------------------------------------------------------
+Id: 21120544
+Name: Lam Thuy Binh An
+DOB: 12/02/2003
+Address: Bien Hoa, Dong Nai
+*Learning schedule*:
+Mon: x x
+Tues: x x
+Wed: x x
+Thurs: x x
+Fri: x x
+Sat: x Machine Learning
+Sun: x x
+---------------------------------------------------------------------

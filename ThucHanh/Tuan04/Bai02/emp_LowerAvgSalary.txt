@@ -1,0 +1,10 @@
+Luong trung binh cua cong ty: 470000
+Cac nhan vien co luong nho hon luong trung binh cua cong ty la:
+===============================================================
+*NVSanXuat:
+-Id: 1
+-Ho Ten: 1
+-NgaySinh: 21/06/2003
+-Dia Chi: 2
+-Luong: 40000
+-----------------------------------------------------

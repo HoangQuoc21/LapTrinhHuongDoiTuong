@@ -1,0 +1,5 @@
+Viết lớp Base và các lớp khác:
+	-Hai constructor: mặc định và có nhiều tham số
+	-get() tất cả các thuộc tính
+	- virtual nhap(), xuat() và các hàm có kế thừa
+	-Dùng cout, cin thôi

@@ -1,0 +1,6 @@
+1200
+P1 Trần Văn Tèo 2.0
+P2 Hứa Văn Lèo 1.5
+P1 Lê Thị Tí 2.0
+P3 Nguyễn Văn Beo 2.0
+P2 nguyen va a 20.0

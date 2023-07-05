@@ -1,0 +1,6 @@
+C12-TienDao C10-ThuMon D18-TienVe: 169
+C12-TienDao D14-ThuMon D18-TienVe: 209
+C15-TienVe C10-ThuMon D11-TienDao: 180
+C15-TienVe D14-ThuMon D11-TienDao: 220
+C10-ThuMon D18-TienVe D11-TienDao: 249
+D14-ThuMon D18-TienVe D11-TienDao: 289

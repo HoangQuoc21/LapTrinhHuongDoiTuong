@@ -1,0 +1,32 @@
+a) Giải thích:
+	ComplexNum x(1,9);		//L1: Tạo biến x có giá trị khởi tạo là (1,9) sử dụng hàm constructor có hai tham số đầu vào
+    	ComplexNum y(5);			//L2: Tạo biến x có giá trị khởi tạo là (5,0) sử dụng hàm constructor có một tham số đầu vào
+    	ComplexNum *p;			//L3: Tạo biến con trỏ p có kiểu dữ liệu là class ComplexNumber
+    	p = new ComplexNum(11,13);	//L4: Cấp phát vùng nhớ tại bộ nhớ heap cho p và khởi tạo giá trị của vùng nhớ đó bằng (11,13) sử dụng hàm 							constructor có hai tham số đầu vào
+    	delete p;				//L5: Giải phóng vùng nhớ heap mà con trỏ p đang trỏ đến
+   	p = &x;				//L6: cho con trỏ p trỏ đến vùng nhớ Stack của biến x
+b) Kết quả in ra chương trình khi chạy:
+	11,13					//In dòng này ra vì đã chủ động giải phóng vùng nhớ heap của biến con trỏ p tại câu lệnh "delete p;"
+	5,0					//Giải phóng vùng nhớ stack của biến y khi kết thúc chương trình
+	1,9					//Giải phóng vùng nhớ stack của biến x khi kết thúc chương trình
+						//Sở dĩ y được giải phóng trước x vì bộ nhớ stack hoạt động theo cơ chế "LIFO" nghĩa là biến nào được khởi tạo 						sau sẽ được giải phóng trước
+	
+
+123456
+Bo Gia
+Phim Hai
+Phim Sai Gon
+2003
+5.5
+123457
+Nha Ba Nu
+Phim Hai
+HBO
+1999
+6.5
+123458
+Bui Doi Cho Lon
+Phim Hanh Dong
+Hollyworld
+2015
+8.5

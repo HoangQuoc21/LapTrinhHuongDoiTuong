@@ -1,0 +1,6 @@
+C12 TienDao 9 10 20
+C15 TienVe 8 8 30
+C10 ThuMon 7 7 50
+D14 ThuMon 90
+D18 TienVe 99
+D11 TienDao 100
